@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pollination Jaipur — handcrafted wall decor, art, stylish interiors and premium home decor designed to last.">
+<meta property="og:title" content="Pollination Jaipur | Home Decor & Art">
+<meta property="og:description" content="Handcrafted wall decor, art, stylish interiors and premium designs crafted to last.">
+<meta name="theme-color" content="#f4efe7">
+<title>Pollination Jaipur | Home Decor & Art</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f5f0e8;
+  --paper:#fbf8f2;
+  --ink:#1b2824;
+  --green:#31584b;
+  --green2:#567669;
+  --gold:#b58b4b;
+  --muted:#6f746e;
+  --line:#d9d0c2;
+  --white:#fffdf8;
+  --max:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.container{width:min(var(--max),92%);margin:auto}
+.section{padding:110px 0}
+.eyebrow{font-size:11px;letter-spacing:.23em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:14px}
+h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.04}
+h2{font-size:clamp(43px,6vw,78px);font-weight:600}
+.section-head{max-width:760px;margin-bottom:55px}
+.section-head p{color:var(--muted);margin-top:18px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:52px;padding:0 25px;border:1px solid var(--green);
+  text-transform:uppercase;letter-spacing:.1em;font-size:11px;font-weight:700;
+  transition:.3s ease
+}
+.btn-green{background:var(--green);color:white;border-color:var(--green)}
+.btn-green:hover{background:#24453b;transform:translateY(-3px)}
+.btn-outline:hover{background:var(--green);color:#fff;transform:translateY(-3px)}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(26px);transition:.8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:50;
+  padding:18px 0;background:rgba(245,240,232,.9);
+  backdrop-filter:blur(12px);border-bottom:1px solid rgba(49,88,75,.1)
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:52px;height:52px;border:1px solid var(--green);border-radius:50%;
+  display:grid;place-items:center;background:var(--white);color:var(--green);
+  font:700 21px "Playfair Display"
+}
+.brand-name{font-size:14px;font-weight:700;letter-spacing:.08em}
+.brand-name span{display:block;color:var(--green2);font-size:9px;letter-spacing:.18em;margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:27px}
+.nav-links a{font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.nav-links a:hover{color:var(--green2)}
+.menu-btn{display:none;border:0;background:none;color:var(--green);font-size:27px}
+
+/* HERO */
+.hero{
+  min-height:100vh;position:relative;display:flex;align-items:flex-end;
+  background:
+    linear-gradient(90deg,rgba(15,26,22,.78),rgba(15,26,22,.24) 65%,rgba(15,26,22,.48)),
+    linear-gradient(0deg,rgba(15,26,22,.7),transparent 60%),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=90") center/cover;
+}
+.hero-content{padding:180px 0 95px;max-width:850px;color:#fff}
+.hero .eyebrow{color:#e3c38c}
+.hero h1{font-size:clamp(60px,8.5vw,120px);font-weight:600}
+.hero h1 span{display:block;font-style:italic;color:#e7d6b4}
+.hero-sub{max-width:650px;margin:24px 0 31px;color:#eee9df;font-size:17px}
+.hero-note{
+  position:absolute;right:4%;bottom:35px;color:#e5ded2;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase
+}
+
+/* INTRO */
+.intro{background:var(--paper)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.intro-image{height:620px;overflow:hidden}
+.intro-image img{transition:1s}
+.intro-image:hover img{transform:scale(1.04)}
+.intro-copy p{color:var(--muted);font-size:16px;margin-bottom:18px}
+.highlight{
+  border-left:2px solid var(--gold);padding-left:18px;margin-top:28px;
+  color:var(--green);font-family:"Playfair Display";font-size:24px;font-style:italic
+}
+
+/* SERVICES */
+.services{background:#eee7db}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);border:1px solid var(--line)
+}
+.service{background:var(--paper);padding:36px;min-height:285px;position:relative;transition:.35s}
+.service:hover{background:#fffdf8}
+.number{color:var(--gold);font-size:11px;letter-spacing:.18em}
+.service h3{font-size:31px;margin:42px 0 14px}
+.service p{font-size:13px;color:var(--muted);max-width:360px}
+.arrow{position:absolute;right:27px;bottom:24px;color:var(--green);font-size:24px}
+
+/* COLLECTION */
+.collections{background:var(--green);color:white}
+.collections .eyebrow{color:#e1bf83}
+.collections .section-head p{color:#d7e0da}
+.collection-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.collection{
+  height:470px;position:relative;overflow:hidden
+}
+.collection img{transition:.8s}
+.collection:hover img{transform:scale(1.06)}
+.collection:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.72),transparent 65%)
+}
+.collection-content{position:absolute;z-index:2;left:22px;right:18px;bottom:20px}
+.collection-content small{color:#e3c58f;text-transform:uppercase;letter-spacing:.15em;font-size:9px}
+.collection-content h3{font-size:30px;margin-top:5px}
+
+/* GALLERY */
+.gallery{background:var(--paper)}
+.gallery-grid{
+  display:grid;grid-template-columns:1.15fr .85fr .85fr;
+  grid-template-rows:300px 300px;gap:12px
+}
+.photo{position:relative;overflow:hidden}
+.photo img{transition:.8s}
+.photo:hover img{transform:scale(1.05)}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 65%)}
+.photo:first-child{grid-row:1/3}
+.photo-title{position:absolute;z-index:2;left:20px;bottom:18px;color:white;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+
+/* PROCESS */
+.process{background:#eee7db}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+.step{padding:30px 18px;border-right:1px solid var(--line)}
+.step:last-child{border:0}
+.step strong{color:var(--gold);font-size:12px}
+.step h3{font-size:27px;margin:25px 0 9px}
+.step p{color:var(--muted);font-size:13px}
+
+/* CTA */
+.cta{
+  padding:115px 0;color:white;
+  background:
+   linear-gradient(90deg,rgba(20,31,27,.88),rgba(20,31,27,.45)),
+   url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85") center/cover
+}
+.cta .eyebrow{color:#e3c38c}
+.cta h2{font-size:clamp(47px,6vw,82px)}
+.cta p{max-width:650px;color:#e0e3dd;margin:20px 0 30px}
+.cta .btn-outline{color:white;border-color:#e6dccd}
+
+/* CONTACT */
+.contact{background:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px}
+.info-list{display:grid;gap:19px}
+.info{border-bottom:1px solid var(--line);padding-bottom:18px}
+.info small{display:block;color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.16em;margin-bottom:3px}
+.info a,.info div{font-size:18px}
+.contact-card{background:#f0e9de;border:1px solid var(--line);padding:38px}
+.contact-card h3{font-size:37px;margin-bottom:22px}
+.form{display:grid;gap:13px}
+.form input,.form textarea{
+  width:100%;background:#faf7f0;border:1px solid #d1c7b7;
+  color:var(--ink);padding:15px;font:inherit;outline:none
+}
+.form input:focus,.form textarea:focus{border-color:var(--green)}
+.form textarea{min-height:135px;resize:vertical}
+
+/* FOOTER */
+footer{background:#18241f;color:white;padding:48px 0 27px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px}
+.footer-title{font:600 29px "Playfair Display"}
+.footer p,.footer a{color:#b8c1ba;font-size:12px}
+.footer p{max-width:330px;margin-top:10px}
+.footer h4{color:#d9b878;font-size:10px;text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px}
+.footer a{display:block;margin:8px 0}
+.footer a:hover{color:white}
+.copy{display:flex;justify-content:space-between;gap:20px;border-top:1px solid rgba(255,255,255,.12);margin-top:35px;padding-top:18px;color:#7f8a83;font-size:10px}
+
+/* FLOATING */
+.floating{position:fixed;right:18px;bottom:18px;z-index:70;display:flex;flex-direction:column;gap:9px}
+.float{
+ width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+ font-size:19px;box-shadow:0 10px 28px rgba(0,0,0,.25);transition:.25s
+}
+.float:hover{transform:translateY(-4px)}
+.call{background:var(--green);color:white}
+.wa{background:#168b53;color:white}
+
+/* MOBILE */
+@media(max-width:900px){
+ .nav-links{display:none}.menu-btn{display:block}
+ .intro-grid,.contact-grid{grid-template-columns:1fr}
+ .intro-image{height:470px}
+ .services-grid{grid-template-columns:1fr 1fr}
+ .collection-grid{grid-template-columns:1fr 1fr}
+ .collection{height:360px}
+ .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:300px 220px 220px}
+ .photo:first-child{grid-column:1/3;grid-row:1}
+ .steps{grid-template-columns:1fr 1fr}
+ .step:nth-child(2){border-right:0}
+ .step:nth-child(n+3){border-top:1px solid var(--line)}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .section{padding:75px 0}
+ .hero-content{padding:145px 0 80px}
+ .hero h1{font-size:60px}
+ .hero-sub{font-size:15px}
+ .hero-note{display:none}
+ .services-grid,.collection-grid{grid-template-columns:1fr}
+ .collection{height:390px}
+ .gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}
+ .photo,.photo:first-child{grid-column:auto;grid-row:auto;height:270px}
+ .steps{grid-template-columns:1fr}
+ .step,.step:nth-child(2),.step:nth-child(n+3){border:0;border-bottom:1px solid var(--line)}
+ .step:last-child{border-bottom:0}
+ .footer-grid{grid-template-columns:1fr}
+ .copy{flex-direction:column}
+ .floating{right:12px;bottom:12px}
+ .float{width:48px;height:48px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+ <div class="container nav-inner">
+  <a class="brand" href="#home">
+   <div class="logo">P</div>
+   <div class="brand-name">POLLINATION JAIPUR<span>HOME DECOR · ART · INTERIORS</span></div>
+  </a>
+  <div class="nav-links">
+   <a href="#home">Home</a>
+   <a href="#about">About</a>
+   <a href="#services">Services</a>
+   <a href="#collections">Collections</a>
+   <a href="#gallery">Gallery</a>
+   <a href="#contact">Contact</a>
+   <a class="btn btn-green" href="https://wa.me/919829405895?text=Hello%20Pollination%20Jaipur%2C%20I%20would%20like%20to%20enquire%20about%20your%20home%20decor%20and%20art." target="_blank">WhatsApp</a>
+  </div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+ </div>
+</nav>
+
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#f5f0e8;z-index:45;padding:120px 9%;">
+ <div style="display:grid;gap:24px;font:600 39px 'Playfair Display';color:#31584b">
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#collections" onclick="toggleMenu()">Collections</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+ </div>
+</div>
+
+<header class="hero" id="home">
+ <div class="container hero-content reveal">
+  <div class="eyebrow">Jaipur Home Decor Store · Art · Interiors</div>
+  <h1>Decor that makes<br><span>spaces bloom.</span></h1>
+  <p class="hero-sub">
+   Handcrafted wall decor, art and stylish interiors — premium designs
+   crafted to bring character, warmth and lasting beauty to your spaces.
+  </p>
+  <div class="actions">
+   <a class="btn btn-green" href="#collections">Explore Collections</a>
+   <a class="btn btn-outline" href="https://wa.me/919829405895?text=Hello%20Pollination%20Jaipur%2C%20I%20would%20like%20to%20know%20more%20about%20your%20decor%20collections." target="_blank">Enquire on WhatsApp</a>
+  </div>
+ </div>
+ <div class="hero-note">Handcrafted · Stylish · Made to Last</div>
+</header>
+
+<section class="section intro" id="about">
+ <div class="container intro-grid">
+  <div class="intro-image reveal">
+   <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85" alt="Premium home interior decor">
+  </div>
+  <div class="reveal">
+   <div class="eyebrow">Pollination Jaipur</div>
+   <h2>Art, texture and thoughtful details for beautiful spaces.</h2>
+   <div style="height:22px"></div>
+   <p>
+    Pollination Jaipur is a home decor store focused on handcrafted wall decor,
+    art and stylish interiors. The brand's positioning centres around premium
+    quality designs crafted to last.
+   </p>
+   <p>
+    Explore a refined mix of decorative pieces and visual details designed to
+    complement contemporary homes, hospitality spaces and interiors.
+   </p>
+   <div class="highlight">“Bring your walls to life. Let your spaces tell a story.”</div>
+  </div>
+ </div>
+</section>
+
+<section class="section services" id="services">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">What We Create</div>
+   <h2>Designed to add personality to every space.</h2>
+   <p>Explore the brand through its core home decor, art and interior-focused offerings.</p>
+  </div>
+
+  <div class="services-grid reveal">
+   <article class="service">
+    <div class="number">01 / WALLS</div>
+    <h3>Handcrafted Wall Decor</h3>
+    <p>Statement wall pieces and handcrafted decor designed to bring texture and visual character to interiors.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">02 / ART</div>
+    <h3>Art & Objects</h3>
+    <p>Decorative art and carefully styled objects for spaces that feel expressive, warm and personal.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">03 / INTERIORS</div>
+    <h3>Stylish Interiors</h3>
+    <p>Visual decor solutions that complement the architecture and atmosphere of your interior spaces.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">04 / PREMIUM</div>
+    <h3>Premium Designs</h3>
+    <p>Design-led pieces with a focus on refined aesthetics and premium visual appeal.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">05 / CRAFT</div>
+    <h3>Handcrafted Details</h3>
+    <p>Craft-led decorative elements that add individuality rather than making a space feel generic.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">06 / LASTING</div>
+    <h3>Made to Last</h3>
+    <p>Premium design positioning with an emphasis on creating decor that remains relevant beyond a trend.</p>
+    <div class="arrow">↗</div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section collections" id="collections">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">Collections</div>
+   <h2>Bring character into the room.</h2>
+   <p>Explore a visual collection inspired by wall art, handcrafted decor, interiors and premium styling.</p>
+  </div>
+
+  <div class="collection-grid reveal">
+   <article class="collection">
+    <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1000&q=85" alt="Wall decor">
+    <div class="collection-content"><small>Collection 01</small><h3>Wall Stories</h3></div>
+   </article>
+   <article class="collection">
+    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85" alt="Interior styling">
+    <div class="collection-content"><small>Collection 02</small><h3>Styled Spaces</h3></div>
+   </article>
+   <article class="collection">
+    <img src="https://images.unsplash.com/photo-1602872030490-4a484a7b3ba6?auto=format&fit=crop&w=1000&q=85" alt="Decor objects">
+    <div class="collection-content"><small>Collection 03</small><h3>Art & Objects</h3></div>
+   </article>
+   <article class="collection">
+    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85" alt="Luxury interior">
+    <div class="collection-content"><small>Collection 04</small><h3>Premium Interiors</h3></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section gallery" id="gallery">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">Visual Inspiration</div>
+   <h2>Details that transform a room.</h2>
+   <p>A curated visual direction for homes and interiors where decor becomes part of the architecture.</p>
+  </div>
+
+  <div class="gallery-grid reveal">
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1400&q=85" alt="Elegant living room">
+    <div class="photo-title">Living Spaces</div>
+   </div>
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1615529162924-f8605388461d?auto=format&fit=crop&w=1000&q=85" alt="Wall art interior">
+    <div class="photo-title">Wall Art</div>
+   </div>
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1000&q=85" alt="Modern decor">
+    <div class="photo-title">Modern Decor</div>
+   </div>
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85" alt="Styled interior">
+    <div class="photo-title">Interior Styling</div>
+   </div>
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85" alt="Premium home">
+    <div class="photo-title">Premium Homes</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section process">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">A Simple Journey</div>
+   <h2>From inspiration to your space.</h2>
+  </div>
+  <div class="steps reveal">
+   <div class="step"><strong>01</strong><h3>Discover</h3><p>Share your space, style and decor requirement.</p></div>
+   <div class="step"><strong>02</strong><h3>Explore</h3><p>Browse suitable art, wall decor and styling directions.</p></div>
+   <div class="step"><strong>03</strong><h3>Select</h3><p>Choose pieces that complement your space.</p></div>
+   <div class="step"><strong>04</strong><h3>Style</h3><p>Bring the selected pieces together with your interior.</p></div>
+   <div class="step"><strong>05</strong><h3>Enjoy</h3><p>Live with a space that feels more personal and complete.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="container reveal">
+  <div class="eyebrow">Pollination Jaipur</div>
+  <h2>Make your walls part of the story.</h2>
+  <p>Connect with Pollination Jaipur for home decor, handcrafted wall art and premium interior styling enquiries.</p>
+  <div class="actions">
+   <a class="btn btn-green" href="https://wa.me/919829405895?text=Hello%20Pollination%20Jaipur%2C%20I%20would%20like%20to%20enquire%20about%20your%20home%20decor%20and%20wall%20art." target="_blank">Enquire on WhatsApp</a>
+   <a class="btn btn-outline" href="tel:+919929110964">Call Now</a>
+  </div>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">Contact Pollination Jaipur</div>
+   <h2>Let's find something beautiful for your space.</h2>
+  </div>
+
+  <div class="contact-grid">
+   <div class="info-list reveal">
+    <div class="info"><small>WhatsApp</small><a href="https://wa.me/919829405895" target="_blank">+91 98294 05895</a></div>
+    <div class="info"><small>Call</small><a href="tel:+919929110964">09929 110964</a></div>
+    <div class="info"><small>Email</small><a href="mailto:pollinationjaipur@gmail.com">pollinationjaipur@gmail.com</a></div>
+    <div class="info"><small>Address</small><div>317A Dr Rajendra Prasad Nagar A Badarwas, Gopalpura Bypass Road, Jaipur, Rajasthan 302020</div></div>
+    <div class="info"><small>Instagram</small><a href="https://www.instagram.com/pollination.jaipur/" target="_blank">@pollination.jaipur</a></div>
+   </div>
+
+   <div class="contact-card reveal">
+    <h3>Send an enquiry</h3>
+    <form class="form" onsubmit="sendWhatsApp(event)">
+      <input id="name" required placeholder="Your name">
+      <input id="phone" required type="tel" placeholder="Your phone number">
+      <input id="interest" placeholder="Wall Decor / Art / Interiors / Home Decor">
+      <textarea id="message" placeholder="Tell us what you are looking for"></textarea>
+      <button class="btn btn-green" type="submit">Send on WhatsApp ↗</button>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div>
+    <div class="footer-title">Pollination Jaipur</div>
+    <p>Jaipur home decor store offering handcrafted wall decor, art, stylish interiors and premium designs crafted to last.</p>
+   </div>
+   <div>
+    <h4>Explore</h4>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#collections">Collections</a>
+    <a href="#gallery">Gallery</a>
+   </div>
+   <div>
+    <h4>Categories</h4>
+    <a href="#services">Wall Decor</a>
+    <a href="#services">Art & Objects</a>
+    <a href="#services">Interiors</a>
+    <a href="#services">Premium Designs</a>
+   </div>
+   <div>
+    <h4>Connect</h4>
+    <a href="https://wa.me/919829405895" target="_blank">WhatsApp</a>
+    <a href="tel:+919929110964">09929 110964</a>
+    <a href="mailto:pollinationjaipur@gmail.com">Email</a>
+    <a href="https://www.instagram.com/pollination.jaipur/" target="_blank">Instagram</a>
+   </div>
+  </div>
+  <div class="copy">
+    <span>© <span id="year"></span> Pollination Jaipur. All rights reserved.</span>
+    <span>Home Decor · Art · Stylish Interiors</span>
+  </div>
+ </div>
+</footer>
+
+<div class="floating">
+ <a class="float call" href="tel:+919929110964" aria-label="Call Pollination Jaipur">☎</a>
+ <a class="float wa" href="https://wa.me/919829405895?text=Hello%20Pollination%20Jaipur%2C%20I%20would%20like%20to%20enquire." target="_blank" aria-label="WhatsApp Pollination Jaipur">◉</a>
+</div>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+   if(entry.isIntersecting) entry.target.classList.add('visible');
+ });
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+function toggleMenu(){
+ const menu=document.getElementById('mobileMenu');
+ menu.style.display=menu.style.display==='none'?'block':'none';
+}
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+function sendWhatsApp(e){
+ e.preventDefault();
+
+ const name=document.getElementById('name').value.trim();
+ const phone=document.getElementById('phone').value.trim();
+ const interest=document.getElementById('interest').value.trim();
+ const message=document.getElementById('message').value.trim();
+
+ const text=`Hello Pollination Jaipur,
+
+My name is ${name}.
+Phone: ${phone}
+Interested in: ${interest || 'Home Decor / Art / Interiors'}
+
+Requirement:
+${message || 'I would like to know more about your products and designs.'}`;
+
+ window.open(
+   'https://wa.me/919829405895?text='+encodeURIComponent(text),
+   '_blank'
+ );
+}
+</script>
+
+</body>
+</html>
